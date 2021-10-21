@@ -1,0 +1,50 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"AnalyticCards": [
+						{
+							"DataSeries": {
+								"Data": "/SAPAssetManager/Rules/SupervisorDashboard/WorkExecution/SparePartAvailability/SparePartsNumbers.js",
+								"CategoryTitles": [
+									"Stock Item",
+									"Non-Stock Item"
+								],
+								"CategoryLabelVisible": true,
+								"NumericLabelVisible": false
+							},
+							"_Type": "Card.Type.Chart",
+							"_Name": "CardTypeChart0",
+							"ChartType": "Column",
+							"Title": "Spare Parts Status",
+							"IsTrendUpward": true,
+							"SeriesTitle": [
+								"Required Spare",
+								"Available Spare",
+								"Unavailable Spare"
+							],
+							"SeriesColor": [
+								"#5899DA",
+								"#4ff20e",
+								"#f40707"
+							]
+						}
+					],
+					"_Type": "Section.Type.AnalyticCardCollection",
+					"_Name": "SectionAnalyticCardCollection0",
+					"Visible": true,
+					"MaxItemCount": 1
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "SparePartsAvailability",
+	"Caption": "$(L,'sd_tab_spareParts')"
+}

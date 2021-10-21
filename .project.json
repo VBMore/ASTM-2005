@@ -1,0 +1,25 @@
+{
+	"Credential": "cf",
+	"Onboarding": {
+		"Schema": "sapmobilesvcs",
+		"TimeZone": "UTC",
+		"URL": "sapmobilesvcs://?AppId=LTI_SAP_Asset_Manager&ClientId=0f1ff49b-b12b-424d-8eb6-0ccc04201cba&ServerUrl=https://ltiiam-ltiiam-lti-sap-asset-manager.cfapps.eu10.hana.ondemand.com&SapCloudPlatformEndpoint=https://ltiiam-ltiiam-lti-sap-asset-manager.cfapps.eu10.hana.ondemand.com&AuthorizationEndpointUrl=https://ltiiam-ltiiam-lti-sap-asset-manager.cfapps.eu10.hana.ondemand.com/oauth2/api/v1/authorize&RedirectUrl=https://ltiiam-ltiiam-lti-sap-asset-manager.cfapps.eu10.hana.ondemand.com&TokenUrl=https://ltiiam-ltiiam-lti-sap-asset-manager.cfapps.eu10.hana.ondemand.com/oauth2/api/v1/token"
+	},
+	"MobileService": {
+		"Type": "standard",
+		"AdminAPI": "https://mobile-service-cockpit-api.cfapps.eu10.hana.ondemand.com/cockpit/v1/org/209ea4d1-470a-44bb-b508-bff63df72a2e/space/be3f4771-402f-4585-a9f6-e493d214d76c",
+		"AppId": "LTI_SAP_Asset_Manager",
+		"Destination": [
+			"DEST_SAM2005_PPROP",
+			"DEST_SAM2005_ONLINE_PPROP"
+		]
+	},
+	"Build": {
+		"SourceMap": true
+	},
+	"CF": {
+		"Target": "https://api.cf.eu10.hana.ondemand.com",
+		"Organization": "209ea4d1-470a-44bb-b508-bff63df72a2e",
+		"Space": "be3f4771-402f-4585-a9f6-e493d214d76c"
+	}
+}

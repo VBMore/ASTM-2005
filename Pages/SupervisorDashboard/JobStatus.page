@@ -1,0 +1,68 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"AnalyticCards": [
+						{
+							"DataSeries": {
+								"Data": "/SAPAssetManager/Rules/SupervisorDashboard/WorkExecution/JobStatus/JobStatusNumbers.js",
+								"CategoryTitles": "/SAPAssetManager/Rules/SupervisorDashboard/WorkExecution/JobStatus/JobStatusCategory.js",
+								"CategoryLabelVisible": true,
+								"NumericLabelVisible": false
+							},
+							"_Type": "Card.Type.Chart",
+							"_Name": "CardTypeChart1",
+							"ChartType": "Column",
+							"Title": "$(L,'sd_chart_jobStatus_workOrder_title')",
+							"IsTrendUpward": true,
+							"SeriesTitle": [
+								"WO Released",
+								"WO TECO"
+							],
+							"SeriesColor": [
+								"#5899DA",
+								"#07f45a"
+							],
+							"OnPress": "/SAPAssetManager/Rules/WorkOrders/WorkOrdersListViewNav.js"
+						},
+						{
+							"DataSeries": {
+								"Data": "/SAPAssetManager/Rules/SupervisorDashboard/WorkExecution/JobStatus/WorkOrderOperationsNumbers.js",
+								"CategoryTitles": "/SAPAssetManager/Rules/SupervisorDashboard/WorkExecution/JobStatus/JobStatusCategory.js",
+								"CategoryLabelVisible": true,
+								"NumericLabelVisible": false
+							},
+							"_Type": "Card.Type.Chart",
+							"_Name": "CardTypeChart2",
+							"ChartType": "Column",
+							"Title": "$(L,'sd_chart_jobStatus_workOrderOp_title')",
+							"IsTrendUpward": true,
+							"SeriesTitle": [
+								"Total Operations",
+								"Operations Confirmed"
+							],
+							"SeriesColor": [
+								"#5899DA",
+								"#09f228"
+							],
+							"OnPress": "/SAPAssetManager/Rules/WorkOrders/Operations/OperationsListViewNav.js"
+						}
+					],
+					"_Type": "Section.Type.AnalyticCardCollection",
+					"_Name": "SectionAnalyticCardCollection0",
+					"Visible": true,
+					"MaxItemCount": 2
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "JobStatus",
+	"Caption": "$(L,'sd_tab_jobStatus')"
+}

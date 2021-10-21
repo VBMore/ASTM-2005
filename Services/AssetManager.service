@@ -1,0 +1,14 @@
+{
+	"DestinationName": "DEST_SAM2005_PPROP",
+	"LanguageURLParam": "sap-language",
+	"OfflineEnabled": true,
+	"OfflineOptions": {
+		"ServiceOptions": {
+			"supportsBind": false
+		},
+		"StoreParameters": {
+			"EnableIndividualErrorArchiveDeletion": true
+		}
+	},
+	"SourceType": "Mobile"
+}

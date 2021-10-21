@@ -1,0 +1,52 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"Header": {
+						"_Name": "SectionHeader0",
+						"UseTopPadding": false
+					},
+					"_Type": "Section.Type.ObjectTable",
+					"Target": {
+						"EntitySet": "/SAPAssetManager/Rules/WorkOrders/History/WorkOrderHistoryEntitySet.js",
+						"Service": "/SAPAssetManager/Services/AssetManager.service",
+						"QueryOptions": "/SAPAssetManager/Rules/WorkOrders/History/WorkOrderHistoryListViewQueryOptions.js"
+					},
+					"_Name": "WorkorderHistoryListViewSection",
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [
+							],
+							"PerformFirstActionWithFullSwipe": true
+						},
+						"Title": "/SAPAssetManager/Rules/WorkOrders/WorkOrderDescription.js",
+						"Subhead": "{OrderId}",
+						"Footnote": "/SAPAssetManager/Rules/WorkOrders/History/WorkOrderHistoryStartEndDate.js",
+						"Description": "/SAPAssetManager/Rules/WorkOrders/History/WorkOrderHistoryLongText.js",
+						"StatusText": "#Property:HistoryPriority/#Property:PriorityDescription",
+						"SubstatusText": "{OrderType}",
+						"PreserveIconStackSpacing": false,
+						"AccessoryType": "none",
+						"OnPress": "/SAPAssetManager/Rules/WorkOrders/History/WorkOrderHistoryDetailsNav.js"
+					},
+					"Search": {
+						"Enabled": true,
+						"Placeholder": "$(L,search)",
+						"BarcodeScanner": true,
+						"Delay": 500,
+						"MinimumCharacterThreshold": 3
+					}
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "WorkOrderHistoriesListViewPage",
+	"Caption": "/SAPAssetManager/Rules/WorkOrders/History/WorkOrderHistoryListViewCaption.js"
+}

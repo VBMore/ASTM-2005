@@ -1,0 +1,62 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"_Type": "Section.Type.ContactCell",
+					"Target": {
+						"Service": "/SAPAssetManager/Services/AssetManager.service",
+						"EntitySet": "AddressCommunications",
+						"QueryOptions": "$orderby=PersonNum"
+					},
+					"_Name": "SectionContactCell0",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"DataPaging": {
+						"ShowLoadingIndicator": false,
+						"PageSize": 50
+					},
+					"ContactCell": {
+						"ContextMenu": {
+							"PerformFirstActionWithFullSwipe": true,
+							"Items": [
+							]
+						},
+						"DetailImage": "/SAPAssetManager/Images/TeamsLogo.png",
+						"Headline": "{AddressNum}",
+						"Subheadline": "{Country}",
+						"Description": "",
+						"OnPress": "/SAPAssetManager/Rules/Collaboration/OpenTeams.js",
+						"ActivityItems": [
+							{
+								"ActivityType": "Phone",
+								"ActivityValue": "{TelNumberCall}",
+								"_Name": "SectionContactCell0ActivityItem1"
+							},
+							{
+								"ActivityType": "Email",
+								"ActivityValue": "{EMail}",
+								"_Name": "SectionContactCell0ActivityItem2"
+							},
+							{
+								"ActivityType": "Message",
+								"ActivityValue": "{TelNumber}",
+								"_Name": "SectionContactCell0ActivityItem3"
+							}
+						]
+					},
+					"Search": {
+						"Enabled": true
+					}
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "CollaborationList",
+	"Caption": "$(L,'collab_caption')"
+}

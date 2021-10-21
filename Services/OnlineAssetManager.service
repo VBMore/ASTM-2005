@@ -1,0 +1,10 @@
+{
+	"DestinationName": "DEST_SAM2005_ONLINE_PPROP",
+	"OfflineEnabled": false,
+	"ServiceUrl": "/destinations/mobileservices",
+	"OnlineOptions": {
+		"ServiceOptions": {
+			"dataFormat": 1
+		}
+	}
+}

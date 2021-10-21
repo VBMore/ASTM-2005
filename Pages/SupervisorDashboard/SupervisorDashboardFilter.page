@@ -1,0 +1,116 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.FormCellContainer",
+			"_Name": "FormCellContainer",
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "ListPickerPlant",
+							"IsEditable": true,
+							"IsVisible": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": false,
+							"Caption": "$(L,'sd_filter_plant_caption')",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"OnValueChange": "/SAPAssetManager/Rules/SupervisorDashboard/Filter/UpdateWorkCenterFilter.js",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": true,
+							"IsSearchCancelledAfterSelection": true,
+							"AllowDefaultValueIfOneItem": false,
+							"FilterProperty": "MainWorkCenterPlant",
+							"Search": {
+								"Enabled": true,
+								"Placeholder": "$(L,search)",
+								"BarcodeScanner": true,
+								"Delay": 500,
+								"MinimumCharacterThreshold": 3
+							},
+							"PickerItems": {
+								"Target": {
+									"Service": "/SAPAssetManager/Services/AssetManager.service",
+									"EntitySet": "Plants",
+									"QueryOptions": "$orderby=Plant"
+								},
+								"DisplayValue": "{{#Property:Plant}} - {{#Property:PlantDescription}}",
+								"ReturnValue": "{Plant}"
+							}
+						},
+						{
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "MainWorkCenterFilter",
+							"AllowMultipleSelection": false,
+							"Caption": "$(L,'sd_filter_workcenter_caption')",
+							"IsPickerDismissedOnSelection": true,
+							"IsSearchCancelledAfterSelection": true,
+							"FilterProperty": "MainWorkCenter",
+							"Search": {
+								"Enabled": true,
+								"Placeholder": "$(L,search)",
+								"BarcodeScanner": true,
+								"Delay": 500,
+								"MinimumCharacterThreshold": 3
+							},
+							"PickerItems": [
+							]
+						},
+						{
+							"Value": "Enter Date",
+							"_Type": "Control.Type.FormCell.DatePicker",
+							"_Name": "FromDateFilter",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Caption": "$(L,'sd_filter_fromDate_caption')",
+							"Mode": "datetime"
+						},
+						{
+							"Value": "Enter Date",
+							"_Type": "Control.Type.FormCell.DatePicker",
+							"_Name": "ToDateFilter",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Caption": "$(L,'sd_filter_toDate_caption')",
+							"Mode": "datetime"
+						}
+					],
+					"Visible": true
+				},
+				{
+					"Controls": [
+						{
+							"_Type": "Control.Type.FormCell.Button",
+							"_Name": "ResetButton",
+							"Title": "$(L,reset_all)",
+							"TextAlignment": "/SAPAssetManager/Rules/Common/Platform/ModalButtonAlign.js",
+							"ButtonType": "Normal",
+							"OnPress": "/SAPAssetManager/Rules/Filter/FilterReset.js"
+						}
+					],
+					"Visible": true
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "SupervisorDashboardFilter",
+	"Caption": "$(L,filter)",
+	"OnLoaded": "/SAPAssetManager/Rules/Filter/FilterOnLoaded.js",
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem1",
+				"SystemItem": "/SAPAssetManager/Rules/Filter/FilterSystemItem.js",
+				"Position": "right",
+				"IsIconCircular": false,
+				"OnPress": "/SAPAssetManager/Actions/SupervisorDashboard/NavTo_SupervisorDashboard.action",
+				"Text": "/SAPAssetManager/Rules/Filter/FilterText.js"
+			}
+		],
+		"_Name": "ActionBar0"
+	}
+}

@@ -1,0 +1,11 @@
+{
+	"_Type": "Page",
+	"_Name": "ResourceLoading",
+	"Controls": [
+		{
+			"_Name": "SectionedTable0",
+			"_Type": "Control.Type.SectionedTable"
+		}
+	],
+	"Caption": "ResourceLoading"
+}

@@ -1,0 +1,157 @@
+{
+    "Caption": "$(L,take_readings)",
+    "OnUnloaded": "/SAPAssetManager/Rules/Measurements/Document/MeasurementDocumentCreateUpdateOnPageUnLoad.js",
+    "OnReturning": "/SAPAssetManager/Rules/Measurements/Document/MeasurementDocumentCreateUpdateOnPageReturn.js",
+    "ActionBar": {
+        "Items": [
+            {
+                "Position": "left",
+                "SystemItem": "Cancel",
+                "OnPress": "/SAPAssetManager/Actions/Page/ConfirmCancelPage.action"
+            },
+            {
+			    "Position": "right",
+			    "Icon": "$(PLT,'','res://filter')",
+                "Text": "$(L,filter)",
+                "Visible": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointFilterVisible.js",
+                "OnPress": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointFilterNav.js"
+		    },
+            {
+                "Position": "right",
+                "SystemItem": "$(PLT,'Done','')",
+                "Text": "/SAPAssetManager/Rules/Common/Platform/DoneText.js",
+                "OnPress": "/SAPAssetManager/Rules/Measurements/Points/MeasurementDocumentsCreateChangeSet.js"
+            }
+        ]
+    },
+    "Controls": [{
+        "_Type": "Control.Type.Extension",
+            "Module": "extension-FieldDataCapture",
+            "Control": "FieldDataCaptureViewExtension",
+            "Class": "FieldDataCaptureViewExtension",
+            "_Name": "FormCellContainer",
+            "ExtensionProperties": {
+                "Sections": [
+                    {
+                        "Search":
+                            {
+                                "Enabled" : true,
+                                "Delay": 500,
+                                "MinimumCharacterThreshold": 3,
+                                "Placeholder": "$(L,search)",
+                                "BarcodeScanner": true
+                            },
+                        "Caption": "",
+                        "Target": {
+                            "EntitySet": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointFDCEntitySet.js",
+                            "Service": "/SAPAssetManager/Services/AssetManager.service",
+                            "QueryOptions":"/SAPAssetManager/Rules/Measurements/Points/MeasuringPointFDCQueryOptions.js"
+                        },
+                        "OnLoaded": "/SAPAssetManager/Rules/Measurements/Document/MeasurementDocumentCreateUpdateOnPageLoadFDC.js",
+                        "Controls": [
+                            {
+                                "Caption": "$(L,skip)",
+                                "IsEditable": true,
+                                "Value": false,
+                                "OnValueChange": "/SAPAssetManager/Rules/Measurements/Points/SkipReadingEnableDisable.js",
+                                "_Name": "SkipValue",
+                                "_Type": "Control.Type.FormCell.Switch"
+                            },
+                            {
+                                "Caption": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointCaption.js",
+                                "_Name": "PointSim",
+                                "Value": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointDisplayValue.js",
+                                "_Type": "Control.Type.FormCell.SimpleProperty",
+                                "IsEditable": false
+                            },
+                            {
+                                "Caption": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointOperationCaption.js",
+                                "_Name": "OperationSim",
+                                "Value": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointOperationDisplayValue.js",
+                                "IsVisible": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointOperationVisible.js",
+                                "_Type": "Control.Type.FormCell.SimpleProperty",
+                                "IsEditable": false
+                            },
+                            {
+                                "Caption": "$(L,lower_limit)",
+                                "_Name": "LowerRangeSim",
+                                "Value": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointLowerRangeDisplayValue.js",
+                                "IsVisible": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointLowerRangeVisible.js",
+                                "_Type": "Control.Type.FormCell.SimpleProperty",
+                                "IsEditable": false
+                            },
+                            {
+                                "Caption": "$(L,upper_limit)",
+                                "_Name": "UpperRangeSim",
+                                "Value": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointUpperRangeDisplayValue.js",
+                                "IsVisible": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointUpperRangeVisible.js",
+                                "_Type": "Control.Type.FormCell.SimpleProperty",
+                                "IsEditable": false
+                            },
+                            {
+                                "Caption": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointDescription.js",
+                                "_Name": "ReadingSim",
+                                "Value": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointReading.js",
+                                "_Type": "Control.Type.FormCell.SimpleProperty",
+                                "IsEditable": "/SAPAssetManager/Rules/Measurements/MeasuringPointReadingIsEditable.js", 
+                                "KeyboardType": "Number",
+                                "PlaceHolder": "$(L,value)"
+                            },
+                            {
+                                "Caption": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointDescription.js",
+                                "Value": " ",
+                                "IsVisible": false,
+                                "IsEditable": false,
+                                "_Name": "ValDescriptionSim",
+                                "_Type": "Control.Type.FormCell.SimpleProperty"
+                            },
+                            {
+                                "Caption": "$(L,uom)",
+                                "Value": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointUOM.js",
+                                "_Name": "UOMSim",
+                                "IsEditable": false,
+                                "KeyboardType": "Default",
+                                "_Type": "Control.Type.FormCell.SimpleProperty"
+                            },
+                            {
+                                "AllowMultipleSelection": false,
+                                "IsPickerDismissedOnSelection": true,
+                                "IsSearchCancelledAfterSelection": true,
+                                "Search": {
+                                    "Enabled": true,
+                                    "Delay": 500,
+                                    "MinimumCharacterThreshold": 3,
+                                    "Placeholder": "$(L,search)",
+                                    "BarcodeScanner": true
+                                },
+                                "Caption": "$(L,valuation_code)",
+                                "Value": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointValuationCode.js",
+                                "PickerItems": {
+                                    "DisplayValue" : "/SAPAssetManager/Rules/Measurements/DisplayValueValuationCode.js",
+                                    "ReturnValue" : "{Code}",
+                                    "Target":
+                                    {
+                                        "EntitySet" : "PMCatalogCodes",
+                                        "Service" : "/SAPAssetManager/Services/AssetManager.service",
+                                        "QueryOptions" : "/SAPAssetManager/Rules/Measurements/Points/PMCatalogQueryOptions.js"
+                                    }
+                                },
+                                "_Name": "ValuationCodeLstPkr",
+                                "_Type": "Control.Type.FormCell.ListPicker"
+                            },
+                            {
+                                "PlaceHolder": "$(L,note)",
+                                "Value": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointShortText.js",
+                                "IsAutoResizing": true,
+                                "_Name": "ShortTextNote",
+                                "_Type": "Control.Type.FormCell.Note"
+                            }
+                        ]
+                    }
+                ]
+            }
+
+    }],
+    "_Type": "Page",
+    "_Name": "MeasuringPointsDetailsPage"
+}

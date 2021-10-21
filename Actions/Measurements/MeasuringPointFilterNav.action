@@ -1,0 +1,6 @@
+{
+    "_Type" : "Action.Type.Navigation",
+    "PageToOpen" : "/SAPAssetManager/Pages/Measurements/MeasuringPointFilter.page",
+    "ModalPage": true,
+    "ModalPageFullscreen": false
+}

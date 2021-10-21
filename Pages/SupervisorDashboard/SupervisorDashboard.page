@@ -1,0 +1,146 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"_Type": "Section.Type.SimplePropertyCollection",
+					"DataSubscriptions": "/SAPAssetManager/Rules/Common/DataSubscriptions.js",
+					"_Name": "SectionSimplePropertyCollection1",
+					"Header": {
+						"_Name": "SectionHeader0",
+						"UseTopPadding": false,
+						"Caption": "$(L,'sd_jobstatus_caption')"
+					},
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"SimplePropertyCells": [
+						{
+							"SimplePropertyCell": {
+								"Value": "/SAPAssetManager/Rules/SupervisorDashboard/WorkExecution/JobStatus/WeeklyWorkOrderCountBasedOnFilter.js",
+								"_Name": "SectionSimplePropertyCell2",
+								"KeyName": "$(L,'sd_jobstatus_weekly_caption')",
+								"AccessoryType": "disclosureIndicator",
+								"Visible": true,
+								"OnPress": "/SAPAssetManager/Actions/SupervisorDashboard/NavTo_WorkExecutionPage.action"
+							}
+						},
+						{
+							"SimplePropertyCell": {
+								"Value": "/SAPAssetManager/Rules/SupervisorDashboard/WorkExecution/JobStatus/WeeklyWorkOrderCountBasedOnFilter.js",
+								"_Name": "SectionSimplePropertyCell3",
+								"KeyName": "$(L,'sd_jobstatus_daily_caption')",
+								"AccessoryType": "disclosureIndicator",
+								"Visible": true,
+								"OnPress": "/SAPAssetManager/Actions/SupervisorDashboard/NavTo_WorkExecutionPage.action"
+							}
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2,
+						"MinimumInteritemSpacing": "$(PLT,66,0)"
+					}
+				},
+				{
+					"_Type": "Section.Type.SimplePropertyCollection",
+					"DataSubscriptions": "/SAPAssetManager/Rules/Common/DataSubscriptions.js",
+					"_Name": "SectionSimplePropertyCollection2",
+					"Header": {
+						"_Name": "SectionHeader1",
+						"UseTopPadding": true,
+						"Caption": "$(L,'sd_spareparts_caption')"
+					},
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"SimplePropertyCells": [
+						{
+							"SimplePropertyCell": {
+								"Value": "/SAPAssetManager/Rules/SupervisorDashboard/WorkExecution/SparePartAvailability/WeeklyStockItemsCount.js",
+								"_Name": "SectionSimplePropertyCell4",
+								"KeyName": "$(L,'sd_spareparts_stock_caption')",
+								"AccessoryType": "disclosureIndicator",
+								"Visible": true,
+								"OnPress": "/SAPAssetManager/Actions/SupervisorDashboard/NavTo_WorkExecutionPage.action"
+							}
+						},
+						{
+							"SimplePropertyCell": {
+								"Value": "/SAPAssetManager/Rules/SupervisorDashboard/WorkExecution/SparePartAvailability/WeeklyNonStockItemsCount.js",
+								"_Name": "SectionSimplePropertyCell5",
+								"KeyName": "$(L,'sd_spareparts_nonstock_caption')",
+								"AccessoryType": "disclosureIndicator",
+								"Visible": true,
+								"OnPress": "/SAPAssetManager/Actions/SupervisorDashboard/NavTo_WorkExecutionPage.action"
+							}
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2,
+						"MinimumInteritemSpacing": "$(PLT,66,0)"
+					}
+				},
+				{
+					"_Type": "Section.Type.SimplePropertyCollection",
+					"DataSubscriptions": "/SAPAssetManager/Rules/Common/DataSubscriptions.js",
+					"_Name": "SectionSimplePropertyCollection3",
+					"Header": {
+						"_Name": "SectionHeader2",
+						"UseTopPadding": true,
+						"Caption": "$(L,'sd_resource_caption')"
+					},
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"SimplePropertyCells": [
+						{
+							"SimplePropertyCell": {
+								"Value": "Value",
+								"_Name": "SectionSimplePropertyCell6",
+								"KeyName": "$(L,'sd_resource_availability')",
+								"AccessoryType": "disclosureIndicator",
+								"Visible": true,
+								"OnPress": "/SAPAssetManager/Actions/SupervisorDashboard/NavTo_WorkExecutionPage.action"
+							}
+						},
+						{
+							"SimplePropertyCell": {
+								"Value": "Value",
+								"_Name": "SectionSimplePropertyCell7",
+								"KeyName": "$(L,'sd_resource_assigned')",
+								"AccessoryType": "disclosureIndicator",
+								"Visible": true,
+								"OnPress": "/SAPAssetManager/Actions/SupervisorDashboard/NavTo_WorkExecutionPage.action"
+							}
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2,
+						"MinimumInteritemSpacing": "$(PLT,66,0)"
+					}
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "SupervisorDashboard",
+	"Caption": "$(L,'sd_main_heading')",
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "Filter",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/SAPAssetManager/Actions/SupervisorDashboard/NavTo_SupervisorDashboardFilterPage.action",
+				"Text": "Filter"
+			}
+		],
+		"_Name": "ActionBar0"
+	}
+}

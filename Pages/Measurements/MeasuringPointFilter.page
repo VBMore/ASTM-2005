@@ -1,0 +1,92 @@
+{
+    "Caption":"$(L,filter)",
+    "Controls":
+    [{
+        "Sections":
+        [
+        {
+            "Controls":
+            [{
+                "Caption": "$(L, equipment)",
+                "_Name": "Equipment",
+                "Value": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointFDCFilterDefaultValue.js",
+                "AllowMultipleSelection": false,
+                "IsVisible":"/SAPAssetManager/Rules/Measurements/Points/MeasuringPointFDCFilterListIsVisible.js",
+                "Search": {
+                    "Enabled": true,
+                    "Delay": 500,
+                    "MinimumCharacterThreshold": 3,
+                    "Placeholder": "$(L,search)",
+                    "BarcodeScanner": true
+                },
+                "IsPickerDismissedOnSelection" : true,
+                "IsSearchCancelledAfterSelection": true,
+                "PickerItems": {
+                    "DisplayValue": "{{#Property:EquipId}} - {{#Property:EquipDesc}}",
+                    "ReturnValue": "{EquipId}",
+                    "Target": {
+                        "EntitySet": "MyEquipments",
+                        "Service": "/SAPAssetManager/Services/AssetManager.service",
+                        "QueryOptions": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointFDCFilterEquipFlocQueryOptions.js"
+                    }
+                },
+                "OnValueChange": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointFDCFilterOnChangeValue.js",
+                "_Type": "Control.Type.FormCell.ListPicker"
+            },
+            {
+                "Caption": "$(L, functional_location)",
+                "_Name": "FuncLoc",
+                "Value": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointFDCFilterDefaultValue.js",
+                "AllowMultipleSelection": false,
+                "IsVisible":"/SAPAssetManager/Rules/Measurements/Points/MeasuringPointFDCFilterListIsVisible.js",
+                "Search": {
+                    "Enabled": true,
+                    "Delay": 500,
+                    "MinimumCharacterThreshold": 3,
+                    "Placeholder": "$(L,search)",
+                    "BarcodeScanner": true
+                },
+                "IsPickerDismissedOnSelection" : true,
+                "IsSearchCancelledAfterSelection": true,
+                "PickerItems": {
+                    "DisplayValue": "{{#Property:FuncLocIdIntern}} - {{#Property:FuncLocDesc}}",
+                    "ReturnValue": "{FuncLocIdIntern}",
+                    "Target": {
+                        "EntitySet": "MyFunctionalLocations",
+                        "Service": "/SAPAssetManager/Services/AssetManager.service",
+                        "QueryOptions": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointFDCFilterEquipFlocQueryOptions.js"
+                    }
+                },
+                "OnValueChange": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointFDCFilterOnChangeValue.js",
+                "_Type": "Control.Type.FormCell.ListPicker"
+            },
+            {
+                "Caption": "$(L,filter_by)",
+                "_Name": "FilterSeg",
+                "Value": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointFDCFilterDefaultValue.js",
+                "AllowMultipleSelection": true,
+                "IsPickerDismissedOnSelection" : false,
+                "PickerItems": [{"DisplayValue": "$(L,skipped)", "ReturnValue": "Skip"}, {"DisplayValue": "$(L,empty)", "ReturnValue": "Empty"}, {"DisplayValue": "$(L,in_error)", "ReturnValue": "Error"}],
+                "OnValueChange": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointFDCFilterOnChangeValue.js",
+                "_Type": "Control.Type.FormCell.ListPicker"
+            }]
+        },
+        {
+            "Controls": [
+                {
+                    "Title": "$(L,reset_all)",
+                    "OnPress": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointFilterReset.js",
+                    "_Type": "Control.Type.FormCell.Button",
+                    "ButtonType": "Normal",
+                    "_Name": "ResetButton",
+                    "TextAlignment": "/SAPAssetManager/Rules/Common/Platform/ModalButtonAlign.js"
+                }
+            ]
+        }],
+        "_Name":"FormCellContainer",
+        "_Type":"Control.Type.FormCellContainer"
+    }],
+    "_Type":"Page",
+    "_Name":"MeasuringPointFilterPage",
+    "OnLoaded": "/SAPAssetManager/Rules/Filter/FilterOnLoaded.js"
+}
