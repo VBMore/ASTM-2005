@@ -8,8 +8,8 @@
 					"_Type": "Section.Type.ContactCell",
 					"Target": {
 						"Service": "/SAPAssetManager/Services/AssetManager.service",
-						"EntitySet": "AddressCommunications",
-						"QueryOptions": "$orderby=PersonNum"
+						"EntitySet": "Employees",
+						"QueryOptions": ""
 					},
 					"_Name": "SectionContactCell0",
 					"Visible": true,
@@ -27,24 +27,24 @@
 							]
 						},
 						"DetailImage": "/SAPAssetManager/Images/TeamsLogo.png",
-						"Headline": "{AddressNum}",
-						"Subheadline": "{Country}",
+						"Headline": "{FirstName}",
+						"Subheadline": "{PersonnelNumber}",
 						"Description": "",
 						"OnPress": "/SAPAssetManager/Rules/Collaboration/OpenTeams.js",
 						"ActivityItems": [
 							{
 								"ActivityType": "Phone",
-								"ActivityValue": "{TelNumberCall}",
+								"ActivityValue": "{PersonnelNumber}",
 								"_Name": "SectionContactCell0ActivityItem1"
 							},
 							{
 								"ActivityType": "Email",
-								"ActivityValue": "{EMail}",
+								"ActivityValue": "",
 								"_Name": "SectionContactCell0ActivityItem2"
 							},
 							{
 								"ActivityType": "Message",
-								"ActivityValue": "{TelNumber}",
+								"ActivityValue": "{PersonnelNumber}",
 								"_Name": "SectionContactCell0ActivityItem3"
 							}
 						]
